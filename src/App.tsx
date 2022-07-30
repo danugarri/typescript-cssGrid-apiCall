@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Instructions } from './components/instructions/Instructions';
 import { PhotosView } from './components/photosView/PhotosView';
 
 function App() {
