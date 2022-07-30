@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useGetData } from '../../hooks/useGetData';
+import { DataResponse } from '../dataResponse/DataResponse';
 import { ErrorHandler } from '../errorHandler/ErrorHandler';
 import { Footer } from '../footer/Footer';
 
@@ -15,20 +16,20 @@ export const PhotosView: React.FC<{}> = () => {
     <>
       {!error ? (
         <React.Fragment>
-          {data!.photos.map((photo, index) => (
-            <img
-              key={index}
-              alt={photo.previewId}
-              src={`${photo.previewUrl}.${photo.type}`}
-              style={{ width: photo.width, height: photo.height }}
-            />
-          ))}
-          <Footer
+          <DataResponse
+            data={data}
             page={page}
             incrementPage={incrementPage}
-            totalPages={data!.total}
             decrementPage={decrementPage}
           />
+          {data!.photos.length > 0 && (
+            <Footer
+              page={page}
+              incrementPage={incrementPage}
+              totalPages={data!.total}
+              decrementPage={decrementPage}
+            />
+          )}
         </React.Fragment>
       ) : (
         <ErrorHandler />
