@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { photosApi } from '../__dont_modify__/api/photos';
 import { GetPhotosResponse } from '../__dont_modify__/api/photos';
@@ -20,14 +20,14 @@ export const useGetData: (page: number) => IGetDataResponse = (page = 0) => {
   useEffect(() => {
     let mounted = true;
     getPhotos({ page })
-      .then(response => {
+      .then((response) => {
         if (mounted) {
           console.log(response);
           setData(response);
           setError(false);
         }
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
         setData(null);
         setError(true);
@@ -36,6 +36,6 @@ export const useGetData: (page: number) => IGetDataResponse = (page = 0) => {
     return function cleanup() {
       mounted = false;
     };
-  }, [page]);
+  }, [page, getPhotos]);
   return { data, error };
 };
