@@ -1,10 +1,14 @@
 .photos-container {
-  text-align: center;
+  margin: 43px;
+  display: grid;
+  grid-template-columns: 425px 425px 425px 425px;
+  column-gap: 42px;
+  grid-template-rows: auto;
+  row-gap: 42px;
 }
 .photo {
-  width: 400px;
-  height: 400px;
-  margin: 1rem;
+  width: 425px;
+  height: 425px;
   border-radius: 20px;
 }
 // Phone resolution
