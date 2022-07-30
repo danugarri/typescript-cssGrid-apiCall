@@ -1,0 +1,12 @@
+#pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pages-box {
+  display: flex;
+  flex-direction: row;
+}
+.pages-control {
+  margin: auto 1rem;
+}

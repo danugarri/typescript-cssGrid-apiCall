@@ -3,9 +3,14 @@ import { useEffect } from 'react';
 import { photosApi } from '../__dont_modify__/api/photos';
 import { GetPhotosResponse } from '../__dont_modify__/api/photos';
 
-export const useGetData: (page: number) => GetPhotosResponse[] = (page = 0) => {
+export interface IGetDataResponse {
+  data: GetPhotosResponse | null;
+  error: boolean;
+}
+export const useGetData: (page: number) => IGetDataResponse = (page = 0) => {
   const { getPhotos } = photosApi;
-  const [data, setData] = useState<GetPhotosResponse>({
+  const [error, setError] = useState<boolean>(false);
+  const [data, setData] = useState<GetPhotosResponse | null>({
     hasMore: true,
     page: 0,
     photos: [],
@@ -13,17 +18,17 @@ export const useGetData: (page: number) => GetPhotosResponse[] = (page = 0) => {
   });
 
   useEffect(() => {
-    let fetch = true;
-    if (fetch)
-      getPhotos({ page }).then(response => {
+    getPhotos({ page })
+      .then(response => {
         console.log(response);
         setData(response);
+        setError(false);
+      })
+      .catch(e => {
+        console.log(e);
+        setData(null);
+        setError(true);
       });
-    //   celan up
-    return () => {
-      fetch = false;
-    };
   }, [page]);
-
-  return [data];
+  return { data, error };
 };
