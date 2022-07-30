@@ -1,0 +1,24 @@
+.photo {
+  width: 400px;
+  height: 400px;
+  margin: 1rem;
+  border-radius: 20px;
+}
+// Phone resolution
+@media only screen and(min-width:250px) and (max-width: 760px) {
+  .photo {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+// Tablet resolution
+@media only screen and(min-width:760px) and (max-width: 1024px) {
+  .photo {
+    width: 200px;
+    height: 200px;
+    margin: 0.5rem;
+    border-radius: 20px;
+  }
+}

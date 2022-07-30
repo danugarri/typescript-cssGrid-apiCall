@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetPhotosResponse } from '../../__dont_modify__/api/photos';
 import { Footer } from '../footer/Footer';
+import './DataResponse.scss';
 
 export const DataResponse: React.FC<{
   data: GetPhotosResponse | null;
@@ -16,7 +17,7 @@ export const DataResponse: React.FC<{
             key={index}
             alt={photo.previewId}
             src={`${photo.previewUrl}.${photo.type}`}
-            style={{ width: '400px', height: '400px', margin: '1rem', borderRadius: '20px' }}
+            className='photo'
           />
         ))}
       </main>
