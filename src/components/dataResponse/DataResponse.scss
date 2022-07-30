@@ -24,24 +24,22 @@
   .photo {
     width: 180px;
     height: 180px;
-    // margin: 0.5rem;
     border-radius: 20px;
   }
 }
 // Phone resolution
 @media only screen and(min-width:250px) and (max-width: 760px) {
   .photos-container {
-    margin: 43px;
+    margin: 0px;
     display: grid;
-    grid-template-columns: 425px 425px 425px 425px;
-    column-gap: 42px;
+    grid-template-columns: 180px 180px 180px;
+    column-gap: 2px;
     grid-template-rows: auto;
-    row-gap: 42px;
+    row-gap: 2px;
   }
   .photo {
-    width: 100px;
-    height: 100px;
-    margin: 0;
-    border-radius: 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 0px;
   }
 }
