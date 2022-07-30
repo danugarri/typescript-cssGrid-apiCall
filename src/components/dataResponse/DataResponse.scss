@@ -32,14 +32,14 @@
   .photos-container {
     margin: 0px;
     display: grid;
-    grid-template-columns: 180px 180px 180px;
+    grid-template-columns: 200px 200px 200px;
     column-gap: 2px;
     grid-template-rows: auto;
     row-gap: 2px;
   }
   .photo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 0px;
   }
 }
