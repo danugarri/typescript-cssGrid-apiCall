@@ -18,6 +18,14 @@ export const DataResponse: React.FC<{
           style={{ width: photo.width, height: photo.height }}
         />
       ))}
+      {data!.photos.length > 0 && (
+        <Footer
+          page={page}
+          incrementPage={incrementPage}
+          totalPages={data!.total}
+          decrementPage={decrementPage}
+        />
+      )}
     </React.Fragment>
   );
 };
