@@ -16,7 +16,9 @@ export const DataResponse: React.FC<{
           <img
             key={index}
             alt={photo.previewId}
-            src={`${photo.previewUrl}.${photo.type}`}
+            src={`https://picsum.photos/id/${Math.floor(Math.random() * 200)}/200/200.${
+              photo.type
+            }`}
             className='photo'
           />
         ))}
