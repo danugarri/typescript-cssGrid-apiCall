@@ -18,17 +18,24 @@ export const useGetData: (page: number) => IGetDataResponse = (page = 0) => {
   });
 
   useEffect(() => {
+    let mounted = true;
     getPhotos({ page })
       .then(response => {
-        console.log(response);
-        setData(response);
-        setError(false);
+        if (mounted) {
+          console.log(response);
+          setData(response);
+          setError(false);
+        }
       })
       .catch(e => {
         console.log(e);
         setData(null);
         setError(true);
       });
+    //   clean up function
+    return function cleanup() {
+      mounted = false;
+    };
   }, [page]);
   return { data, error };
 };
