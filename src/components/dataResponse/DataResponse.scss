@@ -11,6 +11,22 @@
   height: 425px;
   border-radius: 20px;
 }
+// Laptop
+@media only screen and(min-width:1024px) and (max-width: 1500px) {
+  .photos-container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 290px 290px 290px 290px;
+    column-gap: 20px;
+    grid-template-rows: auto;
+    row-gap: 20px;
+  }
+  .photo {
+    width: 290px;
+    height: 290px;
+    border-radius: 20px;
+  }
+}
 // Tablet resolution
 @media only screen and(min-width:760px) and (max-width: 1024px) {
   .photos-container {
