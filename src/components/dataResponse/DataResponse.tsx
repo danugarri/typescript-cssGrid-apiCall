@@ -10,14 +10,16 @@ export const DataResponse: React.FC<{
 }> = ({ data, page, incrementPage, decrementPage }) => {
   return (
     <React.Fragment>
-      {data!.photos.map((photo, index) => (
-        <img
-          key={index}
-          alt={photo.previewId}
-          src={`${photo.previewUrl}.${photo.type}`}
-          style={{ width: photo.width, height: photo.height }}
-        />
-      ))}
+      <main style={{ textAlign: 'center' }}>
+        {data!.photos.map((photo, index) => (
+          <img
+            key={index}
+            alt={photo.previewId}
+            src={`${photo.previewUrl}.${photo.type}`}
+            style={{ width: '400px', height: '400px', margin: '1rem', borderRadius: '20px' }}
+          />
+        ))}
+      </main>
       {data!.photos.length > 0 && (
         <Footer
           page={page}

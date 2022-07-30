@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useGetData } from '../../hooks/useGetData';
 import { DataResponse } from '../dataResponse/DataResponse';
 import { ErrorHandler } from '../errorHandler/ErrorHandler';
-import { Footer } from '../footer/Footer';
 
 export const PhotosView: React.FC<{}> = () => {
   const [page, setPage] = useState(0);
