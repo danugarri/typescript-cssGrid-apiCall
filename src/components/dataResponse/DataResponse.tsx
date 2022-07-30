@@ -11,7 +11,7 @@ export const DataResponse: React.FC<{
 }> = ({ data, page, incrementPage, decrementPage }) => {
   return (
     <React.Fragment>
-      <main style={{ textAlign: 'center' }}>
+      <main className='photos-container'>
         {data!.photos.map((photo, index) => (
           <img
             key={index}
