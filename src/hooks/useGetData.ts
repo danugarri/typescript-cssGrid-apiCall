@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { IGetDataResponse } from '../types/dataResponse.model';
 import { photosApi } from '../__dont_modify__/api/photos';
 import { GetPhotosResponse } from '../__dont_modify__/api/photos';
 
-export interface IGetDataResponse {
-  data: GetPhotosResponse | null;
-  error: boolean;
-}
 export const useGetData: (page: number) => IGetDataResponse = (page = 0) => {
   const { getPhotos } = photosApi;
   const [error, setError] = useState<boolean>(false);
