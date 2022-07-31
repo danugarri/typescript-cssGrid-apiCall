@@ -11,19 +11,35 @@
   height: 425px;
   border-radius: 20px;
 }
-// Laptop
-@media only screen and(min-width:1024px) and (max-width: 1500px) {
+// Laptop mini
+@media only screen and(min-width:1024px) and (max-width: 1260px) {
+  .photos-container {
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 18.125rem 18.125rem 18.125rem 18.125rem;
+    column-gap: 1.25rem;
+    grid-template-rows: auto;
+    row-gap: 1.25rem;
+  }
+  .photo {
+    width: 290px;
+    height: 290px;
+    border-radius: 20px;
+  }
+}
+// Laptops
+@media only screen and(min-width:1260px) and (max-width: 1580px) {
   .photos-container {
     margin: 20px;
     display: grid;
-    grid-template-columns: 290px 290px 290px 290px;
+    grid-template-columns: 360px 360px 360px 360px;
     column-gap: 20px;
     grid-template-rows: auto;
     row-gap: 20px;
   }
   .photo {
-    width: 290px;
-    height: 290px;
+    width: 360px;
+    height: 360px;
     border-radius: 20px;
   }
 }
